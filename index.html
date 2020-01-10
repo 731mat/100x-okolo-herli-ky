@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>herlicka</title>
+</head>
+
+<script type="text/javascript">
+	var cislo = 0;
+	var koeficient=0.890;
+
+	function myFunction() {
+
+		var char = event.which || event.keyCode;
+
+		if(char == 32) cislo++;
+		if(char == 8) cislo--;
+
+	  	document.getElementById("cislo").innerHTML = cislo;
+	  	document.getElementById("km").innerHTML = (cislo*koeficient).toFixed(2)+'km';
+
+	}
+</script>
+<style type="text/css">
+	body{
+		background-color: black;
+	}
+	p{
+		color:white;
+	}
+	#cislo{
+		text-align: center;
+  		font-size: 55.5vw;
+  		margin-top: -10%;
+  		margin-bottom: -12%;
+  		font-weight: 800;
+	}
+	#km{
+		text-align: center;
+  		font-size: 8.5vw;
+  		margin-top: -2%;
+  		margin-bottom: -1%;
+	}
+</style>
+<body onkeyup="myFunction(event)">
+	<p id="cislo">0</p>
+	<p id="km">0</p>
+</body>
+</html>
